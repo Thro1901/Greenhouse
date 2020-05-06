@@ -300,7 +300,7 @@ public class MeasuresDBDAO {
     }
     public Response updateFromGreenhouse() throws ClassNotFoundException, SQLException {
 
-        GreenHouseClass greenHouse = new GreenHouseClass();
+        MeasuresClass greenHouse = new MeasuresClass();
         Class.forName("com.mysql.cj.jdbc.Driver");
         Response res = new Response("Databasen uppdaterat", Boolean.FALSE);
 
