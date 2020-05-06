@@ -166,7 +166,7 @@ public class MeasuresDBDAO {
 
             while (rs.next()) {
 
-                text = "Temperature : " + rs.getInt("temperature")+ ", Fuktighet: " + rs.getInt("humidity") + ", Belysning: " + rs.getInt("light")+ ", Datum: " + rs.getDate("created");
+                text = "Temperatur : " + rs.getInt("temperature")+ ", Fuktighet: " + rs.getInt("humidity") + ", Belysning: " + rs.getInt("light")+ ", Datum: " + rs.getDate("created");
             }
         }
         return text;
@@ -305,7 +305,7 @@ public class MeasuresDBDAO {
         Response res = new Response("Databasen uppdaterat", Boolean.FALSE);
 
         String query = "UPDATE measurement\n" +
-                "SET humidity =" + greenHouse.getHumidity() + ", temperature =" + greenHouse.getTemperature() + ", light = " + greenHouse.getLight()+ ", manualInput = " + greenHouse.getInput() + "\n" +
+                "SET humidity =" + greenHouse.getHumidity() + ", temperature =" + greenHouse.getTemp() + ", light = " + greenHouse.getLight()+ ", manualInput = " + greenHouse.getInput() + "\n" +
                 "ORDER BY id DESC\n" +
                 "LIMIT 1;";
         try (Connection con = DriverManager.getConnection(p.getProperty("connectionString"),
