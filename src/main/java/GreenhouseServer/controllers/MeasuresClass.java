@@ -6,9 +6,9 @@ import java.util.Date;
 public class MeasuresClass implements Serializable {
 
     int id;
-    int temperature = 10;
-    int humidity = 10;
-    int light = 10;
+    int temp = 11;
+    int humidity = 11;
+    int light = 11;
 
 
 
@@ -19,7 +19,7 @@ public class MeasuresClass implements Serializable {
 
 
     public MeasuresClass(int id, int temp, int light, int humidity,int consumption,Date date) {
-        this.temperature = temp;
+        this.temp = temp;
         this.light = light;
         this.humidity = humidity;
         this.id = id;
@@ -44,12 +44,12 @@ public class MeasuresClass implements Serializable {
     }
 
 
-    public int getTemperature() {
-        return temperature;
+    public int getTemp() {
+        return temp;
     }
 
-    public void setTemperature(int temp) {
-        this.temperature = temp;
+    public void setTemp(int temp) {
+        this.temp = temp;
     }
 
     public int getLight() {
