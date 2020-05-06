@@ -13,7 +13,7 @@ public class MeasuresClass implements Serializable {
     int consumption;
     Date date;
 
-    public MeasuresClass(int id, int temp, int light, int humidity,int consumption,Date date) {
+    public MeasuresClass(int id, int temp,int humidity,int light,int consumption,Date date) {
         this.temp = temp;
         this.light = light;
         this.humidity = humidity;
