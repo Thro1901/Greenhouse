@@ -178,8 +178,6 @@ public class MeasuresDBDAO {
 
         List<String> list = new ArrayList<>();
 
-
-
         try (Connection con = DriverManager.getConnection(p.getProperty("connectionString"),
                 p.getProperty("name"),
                 p.getProperty("password")))
@@ -194,8 +192,8 @@ public class MeasuresDBDAO {
             stmt = con.createStatement();
             rs = stmt.executeQuery("SELECT AVG(humidity) \n" +
                     "FROM measurement\n" +
-                    "WHERE DATE(created) \n" +
-                    "BETWEEN '2020-05-05' AND '2020-05-11'");
+                    "WHERE created >= '2020-04-30' and DATE_ADD(created, INTERVAL -1 day)");
+
 
             while (rs.next()) {
 
@@ -212,8 +210,6 @@ public class MeasuresDBDAO {
 
         List<String> list = new ArrayList<>();
 
-
-
         try (Connection con = DriverManager.getConnection(p.getProperty("connectionString"),
                 p.getProperty("name"),
                 p.getProperty("password")))
@@ -228,8 +224,7 @@ public class MeasuresDBDAO {
             stmt = con.createStatement();
             rs = stmt.executeQuery("SELECT AVG(temperature) \n" +
                     "FROM measurement\n" +
-                    "WHERE DATE(created) \n" +
-                    "BETWEEN '2020-05-05' AND '2020-05-11'");
+                    "WHERE created >= '2020-04-30' and DATE_ADD(created, INTERVAL -1 day)");
 
             while (rs.next()) {
 
@@ -246,8 +241,6 @@ public class MeasuresDBDAO {
 
         List<String> list = new ArrayList<>();
 
-
-
         try (Connection con = DriverManager.getConnection(p.getProperty("connectionString"),
                 p.getProperty("name"),
                 p.getProperty("password")))
@@ -262,8 +255,7 @@ public class MeasuresDBDAO {
             stmt = con.createStatement();
             rs = stmt.executeQuery("SELECT AVG(light) \n" +
                     "FROM measurement\n" +
-                    "WHERE DATE(created) \n" +
-                    "BETWEEN '2020-05-05' AND '2020-05-11'");
+                    "WHERE created >= '2020-04-30' and DATE_ADD(created, INTERVAL -1 day)");
 
             while (rs.next()) {
 
@@ -287,8 +279,7 @@ public class MeasuresDBDAO {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT SUM(consumption) \n" +
                     "FROM measurement\n" +
-                    "WHERE DATE(created) \n" +
-                    "BETWEEN '2020-05-05' AND '2020-05-11'");
+                    "WHERE created >= '2020-04-30' and DATE_ADD(created, INTERVAL -1 day)");
 
             while (rs.next()) {
 
