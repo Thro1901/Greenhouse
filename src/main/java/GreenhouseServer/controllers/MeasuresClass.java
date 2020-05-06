@@ -6,19 +6,20 @@ import java.util.Date;
 public class MeasuresClass implements Serializable {
 
     int id;
-    int temp;
-    int light;
-    int humidity;
+    int temperature = 10;
+    int humidity = 10;
+    int light = 10;
 
 
 
+    Boolean input = Boolean.TRUE;
     int consumption;
     Date date;
 
 
 
     public MeasuresClass(int id, int temp, int light, int humidity,int consumption,Date date) {
-        this.temp = temp;
+        this.temperature = temp;
         this.light = light;
         this.humidity = humidity;
         this.id = id;
@@ -34,14 +35,21 @@ public class MeasuresClass implements Serializable {
     public void setConsumption(int consumption) {
         this.consumption = consumption;
     }
-
-
-    public int getTemp() {
-        return temp;
+    public Boolean getInput() {
+        return input;
     }
 
-    public void setTemp(int temp) {
-        this.temp = temp;
+    public void setInput(Boolean input) {
+        this.input = input;
+    }
+
+
+    public int getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(int temp) {
+        this.temperature = temp;
     }
 
     public int getLight() {
