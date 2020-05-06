@@ -9,14 +9,9 @@ public class MeasuresClass implements Serializable {
     int temp = 11;
     int humidity = 11;
     int light = 11;
-
-
-
     Boolean input = Boolean.TRUE;
     int consumption;
     Date date;
-
-
 
     public MeasuresClass(int id, int temp, int light, int humidity,int consumption,Date date) {
         this.temp = temp;
